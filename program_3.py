@@ -1,18 +1,26 @@
-# Program #3: Average Rainfall
-# Write a program that uses nested loops to collect data and calculate the average 
-# rainfall over a period of years.  
-# The program should first ask for the number of years.  
-# The outer loop will iterate once for each year. 
-# The inner loop will iterate twelve times, once for each month.  
-# Each iteration of the inner loop will ask the user for inches of rainfall for each month.  
-# After all iterations, the program should display the number of months, 
-# the total inches of rainfall, and the average rainfall per month for the entire period.
+#Nathan Parker
+#2/11/25
+#Program #3: Average Rainfall
 
-def main():
-    ######################
-    # WRITE YOUR CODE HERE
-    ######################    
+#get the number of years from the user
+number_of_years = int(input('Enter the number of years: '))
 
+#set total_rainfall to 0
+total_rainfall = 0
 
-if __name__ == '__main__':
-    main()
+#get the rainfall for each month in each year from the user and add it to total_rainfall
+for years in range(number_of_years):
+    for month in range(12):
+        rainfall = float(input('Enter the rainfall in inches for a month: '))
+        total_rainfall += rainfall
+
+#calculate the number of months
+number_of_months = number_of_years * 12
+
+#calculate the average rainfall per month
+average_rainfall_per_month = total_rainfall / number_of_months
+
+#display the number of months, the total rainfall, and the average rainfall per month
+print(f'''Number of months: {number_of_months}
+Total rainfall: {total_rainfall:,} in.
+Average rainfall per month: {average_rainfall_per_month:,} in.''')

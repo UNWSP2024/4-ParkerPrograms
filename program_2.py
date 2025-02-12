@@ -1,14 +1,21 @@
-# Program #2: Movie Tix
-# Write a program that has the user input various movie names and how many 
-# tickets are desired for each movie.  
-# At the end of the program it prints out the total number of tickets desired by the user.  
-# Use either a "for loop" or "while loop" to accomplish this.
+#Nathan Parker
+#2/11/25
+#Program #2: Movie Tix
 
-def main():
-    ######################
-    # WRITE YOUR CODE HERE
-    ######################
+#set tickets to 0
+tickets = 0
 
+#get the number of movies from the user
+number_of_movies = int(input('Enter the number of movies you want to see: '))
 
-if __name__ == '__main__':
-    main()
+#get the name and number of tickets for each movie and add additional tickets ordered to the accumulator
+for number in range(number_of_movies):
+    movies = input('Enter the name of the a movie for which you want tickets: ')
+    additional_tickets = int(input(f'Enter the number of tickets that you want for {movies}: '))
+    tickets += additional_tickets
+
+#display the number of tickets ordered
+if tickets == 1:
+    print('You ordered', tickets, 'ticket.')
+else:
+    print('You ordered', tickets, 'tickets.')
